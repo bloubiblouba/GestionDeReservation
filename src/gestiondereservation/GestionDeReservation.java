@@ -36,7 +36,7 @@ public void creerCompte()
     int i=0;
     do{
         if(i!=0)
-            System.out.println("login ou mot de passe non saisi ou les deux mots de passes ne correspondent pas \n \n");
+        System.out.println("login ou mot de passe non saisi ou les deux mots de passes ne correspondent pas \n \n");
         System.out.println("Choisir un nom de login");
         login = Clavier.lireString();
         System.out.println("Choisir un mot de passe");
