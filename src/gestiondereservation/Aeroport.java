@@ -1,6 +1,5 @@
 package gestiondereservation;
 
-//coucou boubou didi bla
 public class Aeroport {
     private int numero_aeroport;
     private String nom_aeroport;
