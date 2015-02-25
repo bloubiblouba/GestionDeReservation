@@ -1,5 +1,6 @@
 package gestiondereservation;
 import java.util.Date;
+import java.util.ArrayList;
         
 public class Reservation {
     private String numero_reservation;
@@ -8,6 +9,7 @@ public class Reservation {
     private int nombre_places;
     private int acompte;
     private int paiement;
+    private ArrayList<Vol>tab_vol;
     
 public Reservation (String num_resa, Date date_resa, String cl, int nb_places, int ac, int p){
     numero_reservation= num_resa;
@@ -16,6 +18,7 @@ public Reservation (String num_resa, Date date_resa, String cl, int nb_places, i
     nombre_places = nb_places;
     acompte = ac;
     paiement = p;
+    tab_vol = new ArrayList();
 }
 
     public String getNumero_reservation() {
