@@ -72,5 +72,22 @@ public Reservation (String num_resa, Date date_resa, String cl, int nb_places, i
         this.paiement = paiement;
     }
 
+    public ArrayList<Vol> getTab_vol() {
+        return tab_vol;
+    }
+
+    public void setTab_vol(ArrayList<Vol> tab_vol) {
+        this.tab_vol = tab_vol;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+    
+
 
 }
