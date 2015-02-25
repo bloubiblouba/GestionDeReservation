@@ -109,6 +109,7 @@ public void creerVol()
     {
     int r;
     System.out.println("1 pour creer un compte");
+    System.out.println("2 pour creer un vol");
  
     r = Clavier.lireInt();
     switch (r)
