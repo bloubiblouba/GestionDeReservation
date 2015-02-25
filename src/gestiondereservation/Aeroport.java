@@ -2,7 +2,7 @@ package gestiondereservation;
 
 
 public class Aeroport {
-    private String numero_aeroport;
+    private int numero_aeroport;
     private String nom_aeroport;
     private String adresse;
     private String telephone;
