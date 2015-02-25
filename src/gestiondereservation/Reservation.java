@@ -9,16 +9,12 @@ public class Reservation {
     private int nombre_places;
     private int acompte;
     private int paiement;
-<<<<<<< HEAD
+
 
     private ArrayList<Vol>tab_vol;
 
     private Client client;
             
-=======
-    private ArrayList<Vol>tab_vol;
-    private Client client;
->>>>>>> origin/master
 
     
 public Reservation (String num_resa, Date date_resa, String cl, int nb_places, int ac, int p, Client client){
@@ -28,7 +24,7 @@ public Reservation (String num_resa, Date date_resa, String cl, int nb_places, i
     nombre_places = nb_places;
     acompte = ac;
     paiement = p;
-<<<<<<< HEAD
+
 
     tab_vol = new ArrayList();
 
