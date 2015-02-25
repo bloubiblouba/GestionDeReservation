@@ -8,14 +8,17 @@ public class Reservation {
     private int nombre_places;
     private int acompte;
     private int paiement;
+    private Client client;
+            
     
-public Reservation (String num_resa, Date date_resa, String cl, int nb_places, int ac, int p){
+public Reservation (String num_resa, Date date_resa, String cl, int nb_places, int ac, int p, Client client){
     numero_reservation= num_resa;
     date_reservation = date_resa;
     classe = cl;
     nombre_places = nb_places;
     acompte = ac;
     paiement = p;
+    client = client;
 }
 
     public String getNumero_reservation() {
