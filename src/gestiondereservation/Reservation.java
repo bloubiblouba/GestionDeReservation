@@ -28,12 +28,8 @@ public Reservation (String num_resa, Date date_resa, String cl, int nb_places, i
 
     tab_vol = new ArrayList();
 
-    client = client;
+    this.client = client;
 
-=======
-    tab_vol = new ArrayList();
-    client = client;
->>>>>>> origin/master
 }
 
     public String getNumero_reservation() {
