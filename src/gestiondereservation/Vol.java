@@ -99,4 +99,13 @@ public Vol (String nv, Date dd, Date da, int hd, int ha, int px1, int q1, int px
     public void setQuantite_seconde(int quantite_seconde) {
         this.quantite_seconde = quantite_seconde;
     }
+
+    public ArrayList<Reservation> getTab_reservation() {
+        return tab_reservation;
+    }
+
+    public void setTab_reservation(ArrayList<Reservation> tab_reservation) {
+        this.tab_reservation = tab_reservation;
+    }
+    
 }
