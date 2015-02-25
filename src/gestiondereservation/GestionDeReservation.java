@@ -1,5 +1,3 @@
-
-
 package gestiondereservation;
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,7 +9,7 @@ private ArrayList<Personne>TabPers;
 //Constructeur de main
 public GestionDeReservation ()
 {
-    //Tableau qui stock les personnes
+    //Tableau qui stocke les personnes
     TabPers = new ArrayList();
 
 } 
@@ -19,9 +17,9 @@ public GestionDeReservation ()
 public void creerCompte()
 {
     //Saisie des infos de la personne
-    System.out.println("Quelle est votre nom");
+    System.out.println("Quel est votre nom");
     String nom = Clavier.lireString();
-    System.out.println("Quelle est votre prénom ?");
+    System.out.println("Quel est votre prénom ?");
     String prenom = Clavier.lireString();
     System.out.println("Quelle est votre adresse ?");
     String adresse = Clavier.lireString();
@@ -36,7 +34,11 @@ public void creerCompte()
     int i=0;
     do{
         if(i!=0)
+<<<<<<< HEAD
         System.out.println("login ou mot de passe non saisi ou les deux mots de passes ne correspondent pas \n \n");
+=======
+            System.out.println("login ou mot de passe non saisi ou les deux mots de passe ne correspondent pas \n \n");
+>>>>>>> origin/master
         System.out.println("Choisir un nom de login");
         login = Clavier.lireString();
         System.out.println("Choisir un mot de passe");
@@ -49,7 +51,7 @@ public void creerCompte()
     Personne a = new Client(nom, prenom,adresse, telephone,login,mdp);
     TabPers.add(a);
     
-    System.out.println("Votre compte a été crée avec succès");
+    System.out.println("Votre compte a été créé avec succès");
     
     
 }

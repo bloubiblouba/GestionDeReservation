@@ -1,6 +1,5 @@
 package gestiondereservation;
 
-//coucou boubou didi bla
 public class Aeroport {
     private int numero_aeroport;
     private String nom_aeroport;
@@ -8,7 +7,7 @@ public class Aeroport {
     private String telephone;
     
 public Aeroport (int num_a, String nom_a, String ad, String tel){
-    numero_aeroport = num_a;
+    numero_aeroport++;
     nom_aeroport = nom_a;
     adresse = ad;
     telephone = tel;
