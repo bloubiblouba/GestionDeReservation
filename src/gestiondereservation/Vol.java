@@ -23,10 +23,7 @@ public Vol (String nv, Date dd, Date da, int hd, int ha, int px1, int q1, int px
     prix_seconde_classe = px2;
     quantite_seconde = q2;
 }
-<<<<<<< HEAD
-}
 
-=======
 
     public String getNumero_vol() {
         return numero_vol;
@@ -100,4 +97,3 @@ public Vol (String nv, Date dd, Date da, int hd, int ha, int px1, int q1, int px
         this.quantite_seconde = quantite_seconde;
     }
 }
->>>>>>> origin/master
