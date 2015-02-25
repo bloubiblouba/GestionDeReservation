@@ -7,18 +7,18 @@ public class Aeroport {
     private String adresse;
     private String telephone;
     
-public Aeroport (String num_a, String nom_a, String ad, String tel){
+public Aeroport (int num_a, String nom_a, String ad, String tel){
     numero_aeroport = num_a;
     nom_aeroport = nom_a;
     adresse = ad;
     telephone = tel;
 }
 
-    public String getNumero_aeroport() {
+    public int getNumero_aeroport() {
         return numero_aeroport;
     }
 
-    public void setNumero_aeroport(String numero_aeroport) {
+    public void setNumero_aeroport(int numero_aeroport) {
         this.numero_aeroport = numero_aeroport;
     }
 
