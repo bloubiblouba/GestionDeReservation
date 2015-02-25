@@ -13,8 +13,10 @@ public class Vol {
     private int prix_seconde_classe;
     private int quantite_seconde;
     private ArrayList<Reservation>tab_reservation;
+    private Aeroport aeroOri;
+    private Aeroport aeroDest;
     
-public Vol (String nv, Date dd, Date da, int hd, int ha, int px1, int q1, int px2, int q2){
+public Vol (String nv, Date dd, Date da, int hd, int ha, int px1, int q1, int px2, int q2,Aeroport ori,Aeroport dest ){
     numero_vol = nv;
     date_depart = dd;
     date_arrivee = da;
@@ -25,7 +27,27 @@ public Vol (String nv, Date dd, Date da, int hd, int ha, int px1, int q1, int px
     prix_seconde_classe = px2;
     quantite_seconde = q2;
     tab_reservation = new ArrayList();
+    aeroOri = ori;
+    aeroDest = dest;
 }
+
+  
+
+    public Aeroport getAeroOri() {
+        return aeroOri;
+    }
+
+    public void setAeroOri(Aeroport aeroOri) {
+        this.aeroOri = aeroOri;
+    }
+
+    public Aeroport getAeroDest() {
+        return aeroDest;
+    }
+
+    public void setAeroDest(Aeroport aeroDest) {
+        this.aeroDest = aeroDest;
+    }
 
 
     public String getNumero_vol() {
