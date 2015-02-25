@@ -55,6 +55,48 @@ public void creerCompte()
     
 }
 
+public void creerVol()
+{
+    Date da;
+    int a, m, j;
+    
+    //Saisie des informations d'un vol
+    System.out.println("Quel est le numero de vol ?");
+    String numero = Clavier.lireString();
+
+    do{    
+        System.out.println("Quelle est la date de départ du vol ?");
+        System.out.println("Veuillez saisir l'année en format AAAA");
+        a = Clavier.lireInt();
+        System.out.println("Saisir le mois en format en format numérique");
+        m = Clavier.lireInt();
+        System.out.println("Saisir le jour");
+        j = Clavier.lireInt();
+        System.out.println("Saisir l'heure de départ en format HH");
+        int h = Clavier.lireInt();
+        System.out.println("Saisir les minutes  en format MM");
+        int min= Clavier.lireInt();
+        da = new Date(a-1900,m-1,j,h,min);
+        
+        System.out.println("Quelle est la date de départ du vol ?");
+        System.out.println("Veuillez saisir l'année en format AAAA");
+        a = Clavier.lireInt();
+        System.out.println("Saisir le mois en format en format numérique");
+        m = Clavier.lireInt();
+        System.out.println("Saisir le jour");
+        j = Clavier.lireInt();
+        System.out.println("Saisir l'heure de départ en format HH");
+        int h = Clavier.lireInt();
+        System.out.println("Saisir les minutes  en format MM");
+        int min= Clavier.lireInt();
+        da = new Date(a-1900,m-1,j,h,min);
+    }
+    while (da.compareTo(new Date())<=0);
+    
+    
+
+}
+
    public void menu()
     {
     int r;
@@ -66,7 +108,9 @@ public void creerCompte()
         case 1 : creerCompte() ;
             menu() ;
             break;
-
+        case 2 : creerVol();
+            menu();
+            break;
             }
 }
     public static void main(String[] args) {
