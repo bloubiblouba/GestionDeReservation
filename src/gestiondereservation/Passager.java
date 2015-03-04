@@ -6,8 +6,8 @@ public class Passager extends Personne {
     private Date date_validite;
     private String sexe;
     
-public Passager (String n, String p, String ad, String tel, String num_passeport, Date date_val, String sx){
-    super (n, p, ad, tel);
+public Passager (String n, String pm, String t, String nr, String nomr, String v, String c, String num_passeport, Date date_val, String sx){
+    super (n, pm, t, nr, nomr, v, c);
     numero_passeport = num_passeport;
     date_validite = date_val;
     sexe = sx;

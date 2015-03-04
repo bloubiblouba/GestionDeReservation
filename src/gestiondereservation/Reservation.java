@@ -10,27 +10,14 @@ public class Reservation {
     private int nombre_places;
     private int acompte;
     private int paiement;
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     private ArrayList<Vol>tab_vol;
     private Client client;
     
-=======
-<<<<<<< HEAD
-=======
+ 
+   
 
 
->>>>>>> origin/master
-=======
->>>>>>> d13810b5f629b127d86987e96f5c6434bffd9a24
-    private ArrayList<Vol>tab_vol;
-    private Client client;
-
-<<<<<<< HEAD
->>>>>>> origin/master
-    
-=======
->>>>>>> d13810b5f629b127d86987e96f5c6434bffd9a24
 public Reservation (String num_resa, Date date_resa, String cl, int nb_places, int ac, int p, Client client){
     numero_reservation= num_resa;
     date_reservation = date_resa;
@@ -38,24 +25,10 @@ public Reservation (String num_resa, Date date_resa, String cl, int nb_places, i
     nombre_places = nb_places;
     acompte = ac;
     paiement = p;
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-
-    tab_vol = new ArrayList();
-    client = client;
-=======
-<<<<<<< HEAD
-=======
->>>>>>> d13810b5f629b127d86987e96f5c6434bffd9a24
     tab_vol = new ArrayList();
     this.client = client;
-<<<<<<< HEAD
->>>>>>> origin/master
->>>>>>> origin/master
 
-=======
->>>>>>> d13810b5f629b127d86987e96f5c6434bffd9a24
 }
 
     public String getNumero_reservation() {

@@ -4,9 +4,9 @@ public class Client extends Personne {
     private int numClient;
     private String login;
     private String mdp;
-    public Client (String n, String pm, String adr, String t, String log, String mdp)
+    public Client (String n, String pm, String t, String nr, String nomr, String v, String c, String log, String mdp)
     {
-        super (n,pm,adr,t);
+        super (n, pm, t, nr, nomr, v, c);
         //numero client auto incrementant et unique
         numClient ++;
         login = log;
