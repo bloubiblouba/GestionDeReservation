@@ -10,13 +10,13 @@ package InterfaceGraphique;
  */
 import gestiondereservation.GestionDeReservation;
 public class PageAccueil extends javax.swing.JFrame {
-private GestionDeReservation ap;
+private GestionDeReservation pacc;
     /**
      * Creates new form PageAccueil
      */
     public PageAccueil() {
         initComponents();
-        ap = new GestionDeReservation();
+        pacc = new GestionDeReservation();
     }
 
     /**
@@ -150,36 +150,31 @@ this.dispose();
         String identifiant = login.getText();
         String motdepasse = password.getText();
         if (identifiant.isEmpty() || motdepasse.isEmpty()) {
-            ErreurMDP emdp = new ErreurMDP(ap);
+            ErreurMDP emdp = new ErreurMDP();
             emdp.setVisible(true);
-          
+
         } else {
             int result;
-            result = ap.testLogin(identifiant, motdepasse);
-            System.out.println("d3");
-           
+            result = pacc.testLogin(identifiant, motdepasse);
             
             if (result == 0) {
-                ErreurPersonne enp = new ErreurPersonne(ap);
+                ErreurPersonne enp = new ErreurPersonne(pacc);
                 enp.setVisible(true);
-                System.out.println("d5");
-            
-
-            } else {
-                    System.out.println("d6");
-                if (identifiant.equalsIgnoreCase("admin") && motdepasse.equalsIgnoreCase("admin")) {
-                MenuAgent ma = new MenuAgent(this);
-                ma.setVisible(true);
-                this.dispose();
                 
+            } else {
+                
+                String nom = pacc.retourneNom(identifiant);
+                if (identifiant.equalsIgnoreCase("admin") && motdepasse.equalsIgnoreCase("admin")) {
+                    MenuAgent ma = new MenuAgent(nom);
+                    ma.setVisible(true);
+                    this.dispose();
 
-                }
-                else {
-                    
-                        MenuClient mc = new MenuClient(this);
-                        mc.setVisible(true);
-                        this.dispose();
-                        
+                } else {
+
+                    MenuClient mc = new MenuClient(this);
+                    mc.setVisible(true);
+                    this.dispose();
+
                 }
             }
     }//GEN-LAST:event_connectActionPerformed

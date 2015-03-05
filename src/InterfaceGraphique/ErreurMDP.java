@@ -4,19 +4,19 @@
  * and open the template in the editor.
  */
 package InterfaceGraphique;
-import gestiondereservation.GestionDeReservation;
+
 /**
  *
  * @author Dihya
  */
 public class ErreurMDP extends javax.swing.JFrame {
-private GestionDeReservation gr;
+
     /**
      * Creates new form ErreurMDP
      */
-    public ErreurMDP(GestionDeReservation emdp) {
+    public ErreurMDP() {
         initComponents();
-        gr=emdp;
+        
     }
 
     /**

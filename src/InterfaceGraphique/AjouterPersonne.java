@@ -5,30 +5,27 @@
  */
 package InterfaceGraphique;
 
+import gestiondereservation.Client;
 import gestiondereservation.GestionDeReservation;
 import gestiondereservation.Personne;
-import java.util.ArrayList;
+
 public class AjouterPersonne extends javax.swing.JFrame {
-private GestionDeReservation gr;
+private GestionDeReservation ap;
 private String [] liste;
 private int nb;
 private int nbcurrent;
-private int i;
-private PageAccueil pageaccueil;
+
    
-    public AjouterPersonne(GestionDeReservation gt, PageAccueil p) {
+    public AjouterPersonne() {
         initComponents();
-        gr = gt;
-        pageaccueil = p;
+        ap = new GestionDeReservation();
         nb = 200;
         liste = new String [nb];
         liste[0]="";
         listepers.setListData(liste);
     }
 
-    AjouterPersonne() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 
    
     @SuppressWarnings("unchecked")
@@ -262,53 +259,49 @@ private PageAccueil pageaccueil;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String nomp=nom.getText();
-        String prenomp=prenom.getText();
-        String viller=ville.getText();
-        String cpr=cp.getText();
-        String numt=numtel.getText();
-        String numr=numrue.getText();
-        String nomr=nomrue.getText();
+        String nomp = nom.getText();
+        String prenomp = prenom.getText();
+        String viller = ville.getText();
+        String cpr = cp.getText();
+        String numt = numtel.getText();
+        String numr = numrue.getText();
+        String nomr = nomrue.getText();
+
+        String identifiant = id.getText();
+        String motdepasse = mdp1.getText();
+        String motdepasse2 = mdp2.getText();
         
-        
-       String identifiant=id.getText();
-        String motdepasse=mdp1.getText();
-        String motdepasse2=mdp2.getText();
-       
-        if (!motdepasse.equalsIgnoreCase(motdepasse2)){
-            ErreurMDP emdp = new ErreurMDP(gr);
-            emdp.setVisible(true); 
-        }
-        if (nomp.isEmpty() || prenomp.isEmpty() || identifiant.isEmpty() || motdepasse.isEmpty() || motdepasse2.isEmpty() ) {
-            ErreurMDP emdp = new ErreurMDP(gr);
+        if (!motdepasse.equalsIgnoreCase(motdepasse2)) {
+            ErreurMDP emdp = new ErreurMDP();
             emdp.setVisible(true);
+            System.out.println("mdp pas bon");
+        }
+        if (nomp.isEmpty() || prenomp.isEmpty() || identifiant.isEmpty() || motdepasse.isEmpty() || motdepasse2.isEmpty()) {
+            ErreurMDP emdp = new ErreurMDP();
+            emdp.setVisible(true);
+            System.out.println("pas tout");
         } else {
-            
-     
-        
-        Personne p = null;
-        int result;
-        result = gr.testPersonne (nomp, prenomp);
-        if (result == 0){
-              System.out.println("d1");
-             p =  gr.CreerClient(nomp, prenomp, numt, numr, nomr, viller, cpr, identifiant, motdepasse);
-        }else{
-            System.out.println("d2");
-             ErreurPersonne enp = new ErreurPersonne(gr);
-             enp.setVisible(true);           
-      }
-        
+
+            Client p = null;
+            int result;
+            result = ap.testPersonne(nomp, prenomp);
+            if (result == 0) {
+                
+                p = ap.CreerClient(nomp, prenomp, numt, numr, nomr, viller, cpr, identifiant, motdepasse);
+            } else {
+                
+                ErreurPersonne enp = new ErreurPersonne(ap);
+                enp.setVisible(true);
+                System.out.println("existe deja");
+            }
+
         //bon
-       
-           if (nbcurrent<nb)
-        {
-        liste[nbcurrent]= p.getNom()+" "+p.getPrenom();
-        listepers.setListData(liste);
-        nbcurrent++;
+            if (nbcurrent < nb) {
+                liste[nbcurrent] = p.getNom()+ " " + p.getPrenom();
+                listepers.setListData(liste);
+                nbcurrent++;
+            }
         }
-        }
-        
-        
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -320,7 +313,7 @@ private PageAccueil pageaccueil;
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.dispose();
         
-        pageaccueil.setVisible(true);
+        //pageaccueil.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
