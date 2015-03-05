@@ -10,7 +10,7 @@ public class Client extends Personne {
         //numero client auto incrementant et unique
         numClient ++;
         login = log;
-        mdp=mdp;
+       this.mdp=mdp;
         
     }
 

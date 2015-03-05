@@ -6,16 +6,22 @@ public class GestionDeReservation {
     
 private ArrayList<Personne>TabPers;
 private ArrayList<Client>TabClient;
-
+private Client admin;
 //Constructeur de main
 public GestionDeReservation ()
 {
     //Tableau qui stocke les personnes
     TabPers = new ArrayList();
     TabClient = new ArrayList();
+    
+    admin = new Client ("Tartampion", "Patapouf", "0666666666", "01","Champs Elysées", "Paris", "75016", "admin", "admin");
+    TabClient.add(admin);
+}
 
-} 
-    public Personne CreerPersonne (String n, String pm, String t, String nr, String nomr, String v, String c){
+
+
+
+public Personne CreerPersonne (String n, String pm, String t, String nr, String nomr, String v, String c){
         Personne p;
         p = new Personne (n, pm, t, nr, nomr, v, c);
         TabPers.add(p);
@@ -49,12 +55,13 @@ public GestionDeReservation ()
     {
         int t = 0;
     
-        if (!TabPers.isEmpty()){
-            for (int i = 0; i<TabPers.size();i++)
+        if (!TabClient.isEmpty()){
+            for (int i = 0; i<TabClient.size();i++)
             {
-                if (TabPers.get(i).getNom().equalsIgnoreCase(n) && TabPers.get(i).getPrenom().equalsIgnoreCase(p) )
+                if (TabClient.get(i).getNom().equalsIgnoreCase(n) && TabClient.get(i).getPrenom().equalsIgnoreCase(p) )
                 {
                     t = 1;
+                    
                 }
                 }
             }
@@ -68,10 +75,12 @@ public GestionDeReservation ()
         if (!TabClient.isEmpty()){
             for (int i = 0; i<TabClient.size();i++)
             {
-                if (TabClient.get(i).getLogin().equalsIgnoreCase(n) && TabClient.get(i).getMdp().equalsIgnoreCase(p) )
+                if (TabClient.get(i).getLogin().equalsIgnoreCase(l) && TabClient.get(i).getMdp().equalsIgnoreCase(p) )
                 {
                     t = 1;
+                    System.out.println(TabClient.get(i).getLogin());
                 }
+                
                 }
             }
         return t;

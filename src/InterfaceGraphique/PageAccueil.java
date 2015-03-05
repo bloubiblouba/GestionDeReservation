@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package InterfaceGraphique;
-
 /**
  *
  * @author Dihya
@@ -17,6 +16,7 @@ private GestionDeReservation ap;
      */
     public PageAccueil() {
         initComponents();
+        ap = new GestionDeReservation();
     }
 
     /**
@@ -109,7 +109,7 @@ private GestionDeReservation ap;
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(connect)
                     .addComponent(signup))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addContainerGap())
         );
@@ -140,34 +140,50 @@ this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupActionPerformed
-     AjouterPersonne ap = new AjouterPersonne();
-     ap.setVisible(true);
-     this.dispose();
+     AjouterPersonne a = new AjouterPersonne(  );
+     a.setVisible(true);
+     this.setVisible(false);
+     
     }//GEN-LAST:event_signupActionPerformed
 
     private void connectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connectActionPerformed
         String identifiant = login.getText();
-        String motdepasse=password.getText();
+        String motdepasse = password.getText();
         if (identifiant.isEmpty() || motdepasse.isEmpty()) {
             ErreurMDP emdp = new ErreurMDP(ap);
             emdp.setVisible(true);
+          
         } else {
             int result;
-        result = ap.testLogin(identifiant, motdepasse);
-        if (result == 0){
-              ErreurPersonne enp = new ErreurPersonne(ap);
-             enp.setVisible(true);  
-             
-        }else{
-            if (identifiant.equalsIgnoreCase('admin') && motdepasse.equalsIgnoreCase('admin')) {
-                MenuAgent ma = new MenuAgent (ap);
-                ma.setVisible(true);
-            }
-                     
-      }
-        }
-    }//GEN-LAST:event_connectActionPerformed
+            result = ap.testLogin(identifiant, motdepasse);
+            System.out.println("d3");
+           
+            
+            if (result == 0) {
+                ErreurPersonne enp = new ErreurPersonne(ap);
+                enp.setVisible(true);
+                System.out.println("d5");
+            
 
+            } else {
+                    System.out.println("d6");
+                if (identifiant.equalsIgnoreCase("admin") && motdepasse.equalsIgnoreCase("admin")) {
+                MenuAgent ma = new MenuAgent(this);
+                ma.setVisible(true);
+                this.dispose();
+                
+
+                }
+                else {
+                    
+                        MenuClient mc = new MenuClient(this);
+                        mc.setVisible(true);
+                        this.dispose();
+                        
+                }
+            }
+    }//GEN-LAST:event_connectActionPerformed
+    }
     /**
      * @param args the command line arguments
      */
