@@ -140,7 +140,7 @@ this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupActionPerformed
-     AjouterPersonne a = new AjouterPersonne( );
+     AjouterPersonne a = new AjouterPersonne(pacc);
      a.setVisible(true);
           
     }//GEN-LAST:event_signupActionPerformed

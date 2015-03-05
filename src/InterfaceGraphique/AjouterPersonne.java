@@ -16,9 +16,9 @@ private int nb;
 private int nbcurrent=1;
 
    
-    public AjouterPersonne() {
+    public AjouterPersonne(GestionDeReservation pacc) {
         initComponents();
-        ap = new GestionDeReservation();
+        ap = pacc;
         nb = 200;
         liste = new String [nb];
         liste[0]=ap.retourneAdmin();

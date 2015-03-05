@@ -30,6 +30,7 @@ public class GestionDeReservation {
         Client cli;
         cli = new Client(n, pm, t, nr, nomr, v, c, log, mdp);
         TabClient.add(cli);
+        System.out.println(TabClient.size());
         return cli;
     }
 
@@ -66,7 +67,7 @@ public class GestionDeReservation {
         return nom;
     }
     public String retourneAdmin2(){
-        String nom = TabClient.get(1).getNom()+" "+TabClient.get(1).getPrenom();
+        String nom = TabClient.get(1).getLogin()+" "+TabClient.get(1).getMdp();
         return nom;
     }
     
@@ -74,6 +75,7 @@ public class GestionDeReservation {
         int t = 0;
 
         if (!TabClient.isEmpty()) {
+            System.out.println(TabClient.size());
             for (int i = 0; i < TabClient.size(); i++) {
                 if (TabClient.get(i).getLogin().equalsIgnoreCase(l) && TabClient.get(i).getMdp().equalsIgnoreCase(p)) {
                     t = 1;
