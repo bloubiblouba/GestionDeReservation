@@ -10,13 +10,13 @@ package InterfaceGraphique;
  * @author Dumitru
  */
 public class MenuClient extends javax.swing.JFrame {
-private PageAccueil pa;
+
     /**
      * Creates new form MenuClient
      */
-    public MenuClient(PageAccueil pagea) {
+    public MenuClient() {
         initComponents();
-        pa = pagea;
+        
     }
 
     /**

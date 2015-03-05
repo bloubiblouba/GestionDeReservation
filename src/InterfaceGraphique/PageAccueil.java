@@ -140,10 +140,9 @@ this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupActionPerformed
-     AjouterPersonne a = new AjouterPersonne(  );
+     AjouterPersonne a = new AjouterPersonne( );
      a.setVisible(true);
-     this.setVisible(false);
-     
+          
     }//GEN-LAST:event_signupActionPerformed
 
     private void connectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connectActionPerformed
@@ -152,6 +151,7 @@ this.dispose();
         if (identifiant.isEmpty() || motdepasse.isEmpty()) {
             ErreurMDP emdp = new ErreurMDP();
             emdp.setVisible(true);
+            System.out.println("vide");
 
         } else {
             int result;
@@ -160,6 +160,7 @@ this.dispose();
             if (result == 0) {
                 ErreurPersonne enp = new ErreurPersonne(pacc);
                 enp.setVisible(true);
+                System.out.println("pas");
                 
             } else {
                 
@@ -171,7 +172,7 @@ this.dispose();
 
                 } else {
 
-                    MenuClient mc = new MenuClient(this);
+                    MenuClient mc = new MenuClient();
                     mc.setVisible(true);
                     this.dispose();
 

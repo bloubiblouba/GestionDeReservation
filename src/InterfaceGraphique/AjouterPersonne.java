@@ -13,7 +13,7 @@ public class AjouterPersonne extends javax.swing.JFrame {
 private GestionDeReservation ap;
 private String [] liste;
 private int nb;
-private int nbcurrent;
+private int nbcurrent=1;
 
    
     public AjouterPersonne() {
@@ -21,7 +21,7 @@ private int nbcurrent;
         ap = new GestionDeReservation();
         nb = 200;
         liste = new String [nb];
-        liste[0]="";
+        liste[0]=ap.retourneAdmin();
         listepers.setListData(liste);
     }
 
@@ -274,12 +274,12 @@ private int nbcurrent;
         if (!motdepasse.equalsIgnoreCase(motdepasse2)) {
             ErreurMDP emdp = new ErreurMDP();
             emdp.setVisible(true);
-            System.out.println("mdp pas bon");
+            
         }
         if (nomp.isEmpty() || prenomp.isEmpty() || identifiant.isEmpty() || motdepasse.isEmpty() || motdepasse2.isEmpty()) {
             ErreurMDP emdp = new ErreurMDP();
             emdp.setVisible(true);
-            System.out.println("pas tout");
+            
         } else {
 
             Client p = null;
@@ -292,7 +292,7 @@ private int nbcurrent;
                 
                 ErreurPersonne enp = new ErreurPersonne(ap);
                 enp.setVisible(true);
-                System.out.println("existe deja");
+                
             }
 
         //bon
@@ -311,9 +311,11 @@ private int nbcurrent;
     }//GEN-LAST:event_numtelActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.dispose();
         
-        //pageaccueil.setVisible(true);
+      
+        this.setVisible(false);
+        String nom=ap.retourneAdmin2();
+        System.out.println(nom);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

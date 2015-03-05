@@ -60,7 +60,16 @@ public class GestionDeReservation {
         }
         return t;
     }
-
+    
+    public String retourneAdmin(){
+        String nom = TabClient.get(0).getNom()+" "+TabClient.get(0).getPrenom();
+        return nom;
+    }
+    public String retourneAdmin2(){
+        String nom = TabClient.get(1).getNom()+" "+TabClient.get(1).getPrenom();
+        return nom;
+    }
+    
     public int testLogin(String l, String p) {
         int t = 0;
 
@@ -68,7 +77,7 @@ public class GestionDeReservation {
             for (int i = 0; i < TabClient.size(); i++) {
                 if (TabClient.get(i).getLogin().equalsIgnoreCase(l) && TabClient.get(i).getMdp().equalsIgnoreCase(p)) {
                     t = 1;
-
+                    
                 }
 
             }
