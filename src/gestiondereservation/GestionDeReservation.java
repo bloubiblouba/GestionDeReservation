@@ -7,6 +7,7 @@ public class GestionDeReservation {
 
     private ArrayList<Personne> TabPers;
     private ArrayList<Client> TabClient;
+    private ArrayList<Vol> TabVol;
     private Client admin;
 //Constructeur de main
 
@@ -14,6 +15,7 @@ public class GestionDeReservation {
         //Tableau qui stocke les personnes
         TabPers = new ArrayList();
         TabClient = new ArrayList();
+        TabVol = new ArrayList();
 
         admin = new Client("Tartampion", "Patapouf", "0666666666", "01", "Champs Elysées", "Paris", "75016", "admin", "admin");
         TabClient.add(admin);
@@ -32,6 +34,13 @@ public class GestionDeReservation {
         TabClient.add(cli);
         System.out.println(TabClient.size());
         return cli;
+    }
+    
+     public Vol CreerVol(String nv, Date dd, Date da, int hd, int ha, int px1, int q1, int px2, int q2,Aeroport ori,Aeroport dest ) {
+        Vol v;
+        v = new Vol(nv, dd, da, hd, ha, px1, q1, px2, q2, ori, dest);
+        TabVol.add(v);
+        return v;
     }
 
     public ArrayList<Personne> rechercherPersonne(String p) {
