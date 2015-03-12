@@ -10,21 +10,15 @@ package InterfaceGraphique;
  * @author Dumitru
  */
 public class MenuClient extends javax.swing.JFrame {
-<<<<<<< HEAD
-String nom;
-=======
+
     private String nom;
 
->>>>>>> origin/master
+
     /**
      * Creates new form MenuClient
      */
     public MenuClient(String name) {
-<<<<<<< HEAD
-        initComponents();
-       
-=======
->>>>>>> origin/master
+
         initComponents();
         nom = name;
         labelNom.setText(nom);
