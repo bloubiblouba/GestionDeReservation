@@ -172,7 +172,7 @@ this.dispose();
 
                 } else {
 
-                    MenuClient mc = new MenuClient();
+                    MenuClient mc = new MenuClient(nom);
                     mc.setVisible(true);
                     this.dispose();
 
